@@ -1,27 +1,30 @@
-import loginForm from './components/loginForm';
-import React, { Fragment } from 'react';
-import index from './index'
 
-function App() {
+import React, { Fragment } from "react";
+import Admin from "./components/Admin";
+import LoginForm from "./components/LoginForm";
+import UiadminDocentes from "./components/UiadminDocentes";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+function App () {
   return (
-    <React.Fragment>
-    <div className="create">
-      <form>
-        <div>
-          <h2>Login UATF</h2>
-          <div >
-            <label>User Name: </label>
-            <input type="text"></input>
-          </div>
-          <div >
-            <label>Password: </label>
-            <input type="password"></input>
-          </div>
-        </div>
-          <button type="submit"> <a href="./components/admin">Ingresar</a> </button>
-      </form>
-    </div>
-    </React.Fragment>
+          <Router>
+                <Switch>
+                  
+                   <Route path="/Admin">
+                      <Admin />
+                  </Route>
+                  <Route path="/">
+                    <LoginForm />
+                  </Route>
+                 </Switch>
+         </Router>
+      
+ 
           
   );
 }
